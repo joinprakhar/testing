@@ -10,17 +10,18 @@ const App = () => {
   const handleUpload = (e) => {
     const formdata = new FormData()
     formdata.append('file', file)
-    axios.post('http://localhost:3001/upload', formdata)
-        .then(res=> console.log(res))
-        .catch(err => console.log(err))
+    axios
+      .post("https://test-bphq.onrender.com", formdata)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
     getImage();
   }
 
   const getImage = async () => {
-  await axios 
-  .get("http://localhost:3001/getimage")
-  .then(  (res) =>  setImage(res.data))
-  .catch((err) => console.log(err));
+  await axios
+    .get("https://test-bphq.onrender.com/getimage")
+    .then((res) => setImage(res.data))
+    .catch((err) => console.log(err));
   }
   useEffect(() => {
     getImage()
@@ -32,13 +33,13 @@ const App = () => {
       <button onClick={handleUpload}>upload</button>
       <br />
       {image.map((x)=>{
-        return(
+        return (
           <img
-            src={`http://localhost:3001/images/${x.image}`}
+            src={`https://test-bphq.onrender.com/images/${x.image}`}
             alt=""
             style={{ width: "100px" }}
           />
-        )
+        );
         })}
       
     </div>
