@@ -35,7 +35,7 @@ const App = () => {
       {image.map((x)=>{
         return (
           <img
-            src={`https://test-bphq.onrender.com/images/${x.image}`}
+            src={`https://test-bphq.onrender.com/Images/${x.image}`}
             alt=""
             style={{ width: "100px" }}
           />
