@@ -11,9 +11,11 @@ const App = () => {
     const formdata = new FormData()
     formdata.append('file', file)
     axios
-      .post("https://test-bphq.onrender.com", formdata)
-      .then((res) => console.log(res))
+      .post("https://test-bphq.onrender.com/upload", formdata)
+      .then((res) => console.log(res));
+        alert('Upload')
       .catch((err) => console.log(err));
+      
     getImage();
   }
 
@@ -35,7 +37,7 @@ const App = () => {
       {image.map((x)=>{
         return (
           <img
-            src={`https://test-bphq.onrender.com/images/${x.image}`}
+            src={`https://test-bphq.onrender.com/Images/${x.image}`}
             alt=""
             style={{ width: "100px" }}
           />
