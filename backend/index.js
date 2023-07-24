@@ -6,7 +6,14 @@ const path = require('path');
 const UserModel = require('./model/user');
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://test-bphq.onrender.com'],
+    credentials: true,
+}))
+// app.use(cors(
+//    "https://test-bphq.onrender.com"
+// ));
 app.use(express.json());
 app.use(express.static('public'))
 
